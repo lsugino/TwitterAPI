@@ -1,0 +1,4 @@
+<%="Tweets from: #{@username}"%><br/>
+<%Twitter.search("from:#{@username}", :count => 10, :result_type => "recent").results.map do |post| %>
+<%= post.text %><br/>                                                
+<%end%>
